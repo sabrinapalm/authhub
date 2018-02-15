@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     
 let githubLogin = document.getElementById('githubLogin');
-let loggedIn = document..getElementById('logged-in');
+let loggedIn = document.getElementById('logged-in');
 
 
 
