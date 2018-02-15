@@ -1,0 +1,19 @@
+#wrapper {
+    text-align: center;
+}
+
+/*authorization*/
+#githubLogin {
+    background-color: transparent;
+    text-align: center;
+    margin: 350px auto;
+    font-size: 4em;
+    border: none;
+}
+#githubLogin a {
+    color: #303841;
+}
+#githubLogin a:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
