@@ -1,3 +1,8 @@
+body {
+    background-color: #FFF;
+    font-family: Josefin Sans;
+}
+
 #wrapper {
     text-align: center;
 }
@@ -6,7 +11,7 @@
 #githubLogin {
     background-color: transparent;
     text-align: center;
-    margin: 350px auto;
+    margin-top: 350px;
     font-size: 4em;
     border: none;
 }
