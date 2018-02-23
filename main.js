@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 let githubLogin = document.getElementById('githubLogin');
 let loggedIn = document.getElementById('logged-in');
 let card = document.getElementById('card');
+let buttonWrapper = document.getElementById('buttonWrapper');
 let logout;
 
 let provider = new firebase.auth.GithubAuthProvider();
@@ -21,7 +22,7 @@ function github() {
 	     let user = result.user;
 
        //hide githubLogin
-       githubLogin.style.display = 'none';
+       buttonWrapper.style.display = 'none';
         console.log(user);
 
         //userinfo
@@ -53,7 +54,9 @@ function github() {
     })
     .catch(function(err){
       //Inlogg misslyckades!
-      console.log('Error, inloggning misslyckades!')
+      console.log(err)
+
+      console.log(err.message)
     })
 }
 
@@ -67,8 +70,7 @@ function githubLogOut() {
     githubLogin.style.display = 'block';
     card.style.display = 'none';
 
-    githubLogin();
-
+    window.location.reload();
   })
   .catch(function(error) {
     // Utloggning misslyckades

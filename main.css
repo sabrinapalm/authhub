@@ -1,32 +1,46 @@
 body {
-    background-color: #222;
+    background-color: #111;
     font-family: Questrial;
 }
 
 #wrapper {
     text-align: center;
+    margin-top: 250px;
+}
+#buttonWrapper {
+  margin-top: 360px;
 }
 
 /*authorization*/
-#githubLogin {
-    background-color: transparent;
-    text-align: center;
-    margin-top: 350px;
-    font-size: 4em;
-    border: none;
+#githubLogin, #facebookLogin, #googleLogin {
+  background-color: transparent;
+  border: none;
+  font-size: 2.3em;
+  font-weight: lighter;
+  letter-spacing: 2px;
 }
-#githubLogin a {
+#githubLogin a, #facebookLogin a, #googleLogin a {
+  opacity: 0.7;
     color: #F1F1F1;
 }
-#githubLogin a:hover {
-    color: #FFF;
+#githubLogin a:hover, #facebookLogin a:hover, #googleLogin a:hover {
+    opacity: 1;
     transition: 0.3s;
+}
+
+#githubLogin:active, #facebookLogin:active, #googleLogin:active {
+  transform: scale(1.1);
+}
+h4 {
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 1px;
 }
 
 #card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   max-width: 300px;
-  margin: 200 auto;
+  margin: 0 auto;
   text-align: center;
   font-family: Questrial;
   background-color: #FFF;
@@ -49,12 +63,12 @@ p {
   font-family: Questrial, sans-serif;
 }
 
-button {
+#card button {
   font-family: Questrial;
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 8px;
+  padding: 15px;
   color: white;
   background-color: rgba(218, 4, 99, 0.8);
   text-align: center;
@@ -63,6 +77,6 @@ button {
   font-size: 18px;
 }
 
-button:active {
+#card button:active {
   background-color: rgba(218, 4, 99, 1);
 }
