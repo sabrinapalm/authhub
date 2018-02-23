@@ -12,23 +12,23 @@ body {
 }
 
 /*authorization*/
-#githubLogin, #facebookLogin, #googleLogin {
+#githubLogin, #twitterLogin, #googleLogin {
   background-color: transparent;
   border: none;
   font-size: 2.3em;
   font-weight: lighter;
   letter-spacing: 2px;
 }
-#githubLogin a, #facebookLogin a, #googleLogin a {
+#githubLogin a, #twitterLogin a, #googleLogin a {
   opacity: 0.7;
     color: #F1F1F1;
 }
-#githubLogin a:hover, #facebookLogin a:hover, #googleLogin a:hover {
+#githubLogin a:hover, #twitterLogin a:hover, #googleLogin a:hover {
     opacity: 1;
     transition: 0.3s;
 }
 
-#githubLogin:active, #facebookLogin:active, #googleLogin:active {
+#githubLogin:active, #twitterLogin:active, #googleLogin:active {
   transform: scale(1.1);
 }
 h4 {
