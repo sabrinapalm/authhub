@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 let githubLogin = document.getElementById('githubLogin');
+let facebookLogin = document.getElementById('facebookLogin');
 let loggedIn = document.getElementById('logged-in');
 let card = document.getElementById('card');
 let buttonWrapper = document.getElementById('buttonWrapper');
 let logout;
 
-let provider = new firebase.auth.GithubAuthProvider();
+let ghProvider = new firebase.auth.GithubAuthProvider();
+let fbProvider = new firebase.auth.FacebookAuthProvider();
+
 
 
 // Logga in den autentiserade användaren
@@ -14,10 +17,15 @@ githubLogin.addEventListener('click', function(event){
     github();
 })
 
+facebookLogin.addEventListener('click', function(event){
+  facebook();
+})
 
+
+/***************************GITHUB***************************/
 //Autentiserad login
 function github() {
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithPopup(ghProvider)
     .then(function(result) {
 	     let user = result.user;
 
@@ -52,9 +60,9 @@ function github() {
         //apply eventlistener on logout button
         logout.onclick = githubLogOut;
     })
-    .catch(function(err){
+    .catch(function(error){
       //Inlogg misslyckades!
-      console.log(err)
+      console.log(error)
 
       console.log(err.message)
     })
@@ -79,10 +87,47 @@ function githubLogOut() {
 }
 
 
+/***************************FACEBOOK***************************/
+
+function facebook() {
+  firebase.auth().signInWithPopup(fbProvider)
+  .then(function(result) {
+    let token = result.credential.accessToken;
+    let fbuser = result.user;  // The signed-in user info.
+    console.log(fbuser);
+  })
+  .catch(function(error){
+
+  })
+}
 
 
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1980065445565249',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v2.12'
+  });
+
+  FB.AppEvents.logPageView();
+
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
 
 
+ function checkLoginState() {
+   FB.getLoginStatus(function(response) {
+     statusChangeCallback(response);
+   });
+ }
 
 
 
