@@ -6,7 +6,9 @@ let card = document.getElementById('card');
 let buttonWrapper = document.getElementById('buttonWrapper');
 let logout;
 
-let ghProvider = new firebase.auth.GithubAuthProvider();
+let githubProvider = new firebase.auth.GithubAuthProvider();
+let googleProvider = new firebase.auth.GithubAuthProvider();
+let twitterProvider = new firebase.auth.GithubAuthProvider();
 
 // Logga in den autentiserade användaren
 githubLogin.addEventListener('click', function(event){
@@ -17,7 +19,7 @@ githubLogin.addEventListener('click', function(event){
 /***************************GITHUB***************************/
 //Autentiserad login
 function github() {
-    firebase.auth().signInWithPopup(ghProvider)
+    firebase.auth().signInWithPopup(githubProvider)
     .then(function(result) {
 	     let user = result.user;
 
