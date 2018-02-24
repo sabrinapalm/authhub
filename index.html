@@ -1,5 +1,5 @@
-
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" name="viewport" content="Width=device-width, initial-scale=1.0">
 	<title>Sabrina Palm | AuthHub</title>
@@ -9,35 +9,39 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="main.js"></script>
 	<!--Firebase stuff-->
-    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDoVRo1XfbNCkUwCVkxr6Xk9bW1qU4Zu94",
-        authDomain: "authhub-8d3ea.firebaseapp.com",
-        databaseURL: "https://authhub-8d3ea.firebaseio.com",
-        projectId: "authhub-8d3ea",
-        storageBucket: "authhub-8d3ea.appspot.com",
-        messagingSenderId: "186430138185"
-      };
-      firebase.initializeApp(config);
-    </script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		      var config = {
+		        apiKey: "AIzaSyDoVRo1XfbNCkUwCVkxr6Xk9bW1qU4Zu94",
+		        authDomain: "authhub-8d3ea.firebaseapp.com",
+		        databaseURL: "https://authhub-8d3ea.firebaseio.com",
+		        projectId: "authhub-8d3ea",
+		        storageBucket: "authhub-8d3ea.appspot.com",
+		        messagingSenderId: "186430138185"
+		      };
+		      firebase.initializeApp(config);
+	</script>
 </head>
 
 <body>
 	<div id="wrapper">
-		<div id="online"><i class="fas fa-user-circle"></i></div>
+		<div id="online"><i class="fas fa-user-circle"></i>
+		</div>
 		<div id="buttonWrapper">
 			<div id="popup"></div>
 			<h4>Don't have any account? <span style="color: #EE2B47">Sign up!</span></h4>
-      <button id="githubLogin"><a href="#"><i class="fab fa-github"></i></a></button>
-			<button id="googleLogin"><a href="#"><i class="fab fa-google"></i></a></button>
-			<button id="twitterLogin"><a href="#"><i class="fab fa-twitter"></i></a></button>
+			<button id="githubLogin"><a href="#"><i class="fab fa-github"></i></a>
+			</button>
+			<button id="googleLogin"><a href="#"><i class="fab fa-google"></i></a>
+			</button>
+			<button id="twitterLogin"><a href="#"><i class="fab fa-twitter"></i></a>
+			</button>
 		</div>
-      <div id="logged-in">
-				<div id="card"></div>
-      </div>
-    </div>
+		<div id="logged-in">
+			<div id="card"></div>
+		</div>
+	</div>
 </body>
 
 </html>
