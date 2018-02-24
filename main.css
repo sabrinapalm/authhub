@@ -5,10 +5,17 @@ body {
 
 #wrapper {
     text-align: center;
-    margin-top: 250px;
+    margin-top: 350px;
 }
+
+#online {
+  color: white;
+  opacity: 0.7;
+  font-size: 5em;
+}
+
 #buttonWrapper {
-  margin-top: 360px;
+  margin-top: 20px;
 }
 
 /*authorization*/
@@ -38,22 +45,21 @@ h4 {
 }
 
 #card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
   font-family: Questrial;
-  background-color: #FFF;
+  background-color: transparent;
 }
 #card img {
   width: 100%;
 }
 
 h1 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 0px;
   font-family: Arial, sans-serif;
-  color: #222;
+  color: #FFF;
 }
 
 p {
@@ -65,28 +71,33 @@ p {
 
 #card button {
   font-family: Questrial;
-  border: none;
+  border: 2px solid #08D9D6;
   outline: 0;
   display: inline-block;
   padding: 15px;
   color: white;
-  background-color: rgba(218, 4, 99, 0.8);
+  background-color: transparent;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 70%;
   font-size: 18px;
+  border-radius: 5px;
 }
 
 #card button:active {
-  background-color: rgba(218, 4, 99, 1);
+  transform: scale(1.1);
 }
 
-
+#card img {
+  border-radius: 50px;
+  width: 90px;
+}
 
 /*POP UP CONTAINER FOR ERROR*/
 #popup {
   display: none;
-	background-color: rgba(218, 4, 99, 1);
+	background-color: transparent;
+  border: 1px solid white;
 	border-radius: 5px;
 	width: 290px;
   height: 35px;

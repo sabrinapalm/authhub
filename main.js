@@ -7,11 +7,12 @@ let githubLogin = document.getElementById('githubLogin'),
 
 //user info card
 let card = document.getElementById('card'),
+    online = document.getElementById('online'),
     buttonWrapper = document.getElementById('buttonWrapper'),
     popup = document.getElementById('popup'),
     logout;
 
-//firebase AuthProviders
+//firebase AuthorProviders
 let githubProvider = new firebase.auth.GithubAuthProvider(),
     googleProvider = new firebase.auth.GoogleAuthProvider(),
     twitterProvider = new firebase.auth.TwitterAuthProvider();
@@ -33,7 +34,7 @@ function createUserInfo(name, email, photo){
 
   //hide githubLogin
   buttonWrapper.style.display = 'none';
-
+  online.style.display = 'none';
   //create elements
   let h1 = document.createElement('h1');
   let p = document.createElement('p');
