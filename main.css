@@ -80,3 +80,69 @@ p {
 #card button:active {
   background-color: rgba(218, 4, 99, 1);
 }
+
+
+
+/*POP UP CONTAINER FOR ERROR*/
+#popup {
+  display: none;
+	background-color: rgba(218, 4, 99, 1);
+	border-radius: 5px;
+	width: 290px;
+  height: 35px;
+  padding: 10px;
+	margin: 0px auto;
+	font-weight: 100;
+  overflow: hidden;;
+}
+#popup {
+	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+
+}
+#popup p {
+  color: #fff;
+  padding: 0px;
+  margin-left: 0px;
+  font-size: 0.9em;
+}
+
+/* Toggle this class when error appears */
+#popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}

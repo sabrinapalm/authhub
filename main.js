@@ -8,6 +8,7 @@ let githubLogin = document.getElementById('githubLogin'),
 //user info card
 let card = document.getElementById('card'),
     buttonWrapper = document.getElementById('buttonWrapper'),
+    popup = document.getElementById('popup'),
     logout;
 
 //firebase AuthProviders
@@ -56,6 +57,14 @@ function createUserInfo(name, email, photo){
   logout.onclick = githubLogOut;
 }
 
+//popup for error messages
+function handleError(failed){
+  let failedMsg = document.createElement('p');
+  popup.style.display = 'block';
+  failedMsg.innerText = failed;
+  popup.appendChild(failedMsg);
+}
+
 
 /***************************GITHUB***************************/
 //Autentiserad login
@@ -63,8 +72,6 @@ function github() {
     firebase.auth().signInWithPopup(githubProvider)
     .then(function(result) {
 	     let user = result.user;
-
-        console.log(user);
 
         //userinfo
         let name = user.displayName;
@@ -75,8 +82,9 @@ function github() {
     })
     .catch(function(error){
       //Inlogg misslyckades!
-      console.log(error)
-      console.log(err.message)
+      let failed = error.message;
+      handleError(failed);
+
     })
 }
 
@@ -85,7 +93,6 @@ function githubLogOut() {
   firebase.auth().signOut()
   .then(function() {
   	// Utloggning lyckades
-    console.log("User is logged out");
 
     githubLogin.style.display = 'block';
     card.style.display = 'none';
@@ -94,7 +101,8 @@ function githubLogOut() {
   })
   .catch(function(error) {
     // Utloggning misslyckades
-  	console.log('Error, utloggning misslyckades!')
+    let failed = error.message;
+    handleError(failed);
   });
 }
 /***************************GITHUB ENDS***************************/
@@ -106,7 +114,6 @@ function google() {
     firebase.auth().signInWithPopup(googleProvider)
     .then(function(result) {
       let user = result.user;
-      console.log(user);
 
       let name = user.displayName;
       let email = user.email;
@@ -115,8 +122,8 @@ function google() {
       createUserInfo(name, email, photo);
     })
     .catch(function(error){
-      console.log(error)
-      console.log(error.message)
+      let failed = error.message;
+      handleError(failed);
     })
 }
 /***************************GOOGLE ENDS***************************/
@@ -128,7 +135,6 @@ function twitter() {
     firebase.auth().signInWithPopup(twitterProvider)
     .then(function(result) {
       let user = result.user;
-      console.log(user);
 
       let name = user.displayName;
       let photo = user.photoURL;
@@ -143,8 +149,8 @@ function twitter() {
       createUserInfo(name, email, photo);
     })
     .catch(function(error){
-      console.log(error)
-      console.log(error.message)
+      let failed = error.message;
+      handleError(failed);
     })
 }
 /***************************TWITTER ENDS***************************/
