@@ -30,7 +30,7 @@ twitterLogin.addEventListener('click', function(event){
 })
 
 //create card function
-function createUserInfo(name, email, photo){
+function createUserInfo(name, email, photo, newPhoto){
 
   //hide githubLogin
   buttonWrapper.style.display = 'none';
@@ -139,6 +139,7 @@ function twitter() {
 
       let name = user.displayName;
       let photo = user.photoURL;
+      let newPhoto = photo.replace("_normal", "");
 
       //check if email is null
       if (user.email == null) {
@@ -147,7 +148,7 @@ function twitter() {
         let email = user.email;
       }
 
-      createUserInfo(name, email, photo);
+      createUserInfo(name, email, newPhoto);
     })
     .catch(function(error){
       let failed = error.message;
