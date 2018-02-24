@@ -143,7 +143,7 @@ function twitter() {
 
       //check if email is null
       if (user.email == null) {
-        email = 'email not verified'
+        email = 'email is not verified'
       } else {
         let email = user.email;
       }
