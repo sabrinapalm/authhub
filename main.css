@@ -1,5 +1,5 @@
 body {
-    background-color: #111;
+    background-color: #2C2E3E;
     font-family: Questrial;
 }
 
@@ -9,7 +9,7 @@ body {
 }
 
 #online {
-  color: white;
+  color: #F6F6F6;
   opacity: 0.7;
   font-size: 5em;
 }
@@ -28,7 +28,7 @@ body {
 }
 #githubLogin a, #twitterLogin a, #googleLogin a {
   opacity: 0.7;
-    color: #F1F1F1;
+    color: #F6F6F6;
 }
 #githubLogin a:hover, #twitterLogin a:hover, #googleLogin a:hover {
     opacity: 1;
@@ -39,7 +39,7 @@ body {
   transform: scale(1.1);
 }
 h4 {
-  color: white;
+  color: #F6F6F6;
   font-size: 0.9em;
   letter-spacing: 1px;
 }
@@ -59,7 +59,7 @@ h1 {
   margin-top: 10px;
   margin-bottom: 0px;
   font-family: Arial, sans-serif;
-  color: #FFF;
+  color: #F6F6F6;
 }
 
 p {
@@ -71,20 +71,21 @@ p {
 
 #card button {
   font-family: Questrial;
-  border: 2px solid #08D9D6;
+  border: 2px solid #EE2B47;
   outline: 0;
   display: inline-block;
-  padding: 15px;
-  color: white;
+  padding: 13px;
+  color: #F6F6F6;
   background-color: transparent;
   text-align: center;
   cursor: pointer;
-  width: 70%;
+  width: 210px;
   font-size: 18px;
   border-radius: 5px;
 }
 
 #card button:active {
+  background-color: #EE2B47;
   transform: scale(1.1);
 }
 
@@ -97,9 +98,9 @@ p {
 #popup {
   display: none;
 	background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #EE2B47;
 	border-radius: 5px;
-	width: 290px;
+	width: 300px;
   height: 35px;
   padding: 10px;
 	margin: 0px auto;
