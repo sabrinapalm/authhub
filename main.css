@@ -1,14 +1,16 @@
 body {
-	background-color: #2C2E3E;
 	font-family: Questrial;
+	height: 200px;
+  background: #2C2E3E;
+  background: linear-gradient(#2C2E3E, #3A718C);
 }
 #wrapper {
 	text-align: center;
-	margin-top: 300px;
+	margin-top: 280px;
 }
 #online {
 	color: #F6F6F6;
-	opacity: 0.7;
+	opacity: 0.8;
 	font-size: 5em;
 }
 #buttonWrapper {
@@ -28,7 +30,7 @@ body {
 #githubLogin a,
 #twitterLogin a,
 #googleLogin a {
-	opacity: 0.7;
+	opacity: 0.8;
 	color: #F4F4F4;
 }
 #githubLogin a:hover,
@@ -44,7 +46,7 @@ body {
 }
 h4 {
 	color: #F6F6F6;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	letter-spacing: 1px;
 }
 #card {
@@ -64,32 +66,33 @@ h1 {
 	color: #F6F6F6;
 }
 p {
-	color: darkgray;
+	color: #F4F4F4;
+	font-family: Questrial, sans-serif, Arial;
 	margin-top: 2px;
 	margin-bottom: 30px;
 	font-family: Questrial, sans-serif;
 }
 #card button {
 	font-family: Questrial;
-	border: 2px solid #EE2B47;
+	border: 2px solid #B2D430;
 	outline: 0;
 	display: inline-block;
-	padding: 13px;
+	padding: 10px;
 	color: #F6F6F6;
 	background-color: transparent;
 	text-align: center;
 	cursor: pointer;
-	width: 210px;
+	width: 200px;
 	font-size: 18px;
 	border-radius: 5px;
 }
 #card button:active {
-	background-color: #EE2B47;
+	background-color: #B2D430;
 	transform: scale(1.1);
 }
 #card img {
-	border-radius: 50px;
-	width: 100px;
+	border-radius: 100px;
+	width: 150px;
 }
 #icon {
 	text-align: right;
@@ -101,7 +104,7 @@ p {
 #popup {
 	display: none;
 	background-color: transparent;
-	border: 1px solid #EE2B47;
+	border: 1px solid #B2D430;
 	border-radius: 5px;
 	width: 300px;
 	height: 35px;
