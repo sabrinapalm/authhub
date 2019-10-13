@@ -1,18 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+	const config = {
+		apiKey: "AIzaSyDoVRo1XfbNCkUwCVkxr6Xk9bW1qU4Zu94",
+		authDomain: "authhub-8d3ea.firebaseapp.com",
+		databaseURL: "https://authhub-8d3ea.firebaseio.com",
+		projectId: "authhub-8d3ea",
+		storageBucket: "authhub-8d3ea.appspot.com",
+		messagingSenderId: "186430138185"
+	};
+	firebase.initializeApp(config);
+
 	//Login buttons
-	let githubLogin = document.getElementById('githubLogin'),
-		googleLogin = document.getElementById('googleLogin'),
-		loggedIn = document.getElementById('logged-in');
+	let githubLogin = document.getElementById('githubLogin');
+	let googleLogin = document.getElementById('googleLogin');
+	let loggedIn = document.getElementById('logged-in');
 	//user info card
-	let card = document.getElementById('card'),
-		online = document.getElementById('online'),
-		buttonWrapper = document.getElementById('buttonWrapper'),
-		popup = document.getElementById('popup'),
-		logout;
+	let card = document.getElementById('card');
+	let online = document.getElementById('online');
+	let buttonWrapper = document.getElementById('buttonWrapper');
+	let popup = document.getElementById('popup');
 	//firebase AuthorProviders
-	let githubProvider = new firebase.auth.GithubAuthProvider(),
-		googleProvider = new firebase.auth.GoogleAuthProvider(),
-		twitterProvider = new firebase.auth.TwitterAuthProvider();
+	let githubProvider = new firebase.auth.GithubAuthProvider();
+	let googleProvider = new firebase.auth.GoogleAuthProvider();
+
 	//Button eventlisteners
 	githubLogin.addEventListener('click', function (event) {
 		github();
@@ -20,18 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	googleLogin.addEventListener('click', function (event) {
 		google();
 	})
-	twitterLogin.addEventListener('click', function (event) {
-		twitter();
-	})
+
 	/***************************GITHUB***************************/
 	function github() {
-		firebase.auth().signInWithPopup(githubProvider).then(function (result) {
-			let user = result.user;
-			//userinfo
-			let name = user.displayName;
-			let email = user.email;
-			let photo = user.photoURL;
-			createUserInfo(name, email, photo);
+		firebase.auth().signInWithPopup(githubProvider).then(function (res) {
+			let user = {
+				name: res.user.displayName,
+				email: res.user.email,
+				photo: res.user.photoURL
+			};
+			createUserInfo(user);
 		}).catch(function (error) {
 			//Inlogg misslyckades!
 			let failed = error.message;
@@ -41,40 +49,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	/***************************GITHUB ENDS***************************/
 	/***************************GOOGLE***************************/
 	function google() {
-		firebase.auth().signInWithPopup(googleProvider).then(function (result) {
-			let user = result.user;
-			let name = user.displayName;
-			let email = user.email;
-			let photo = user.photoURL;
-			createUserInfo(name, email, photo);
+		firebase.auth().signInWithPopup(googleProvider).then(function (res) {
+			let user = {
+				name: res.user.displayName,
+				email: res.user.email,
+				photo: res.user.photoURL
+			};
+			createUserInfo(user);
 		}).catch(function (error) {
 			let failed = error.message;
 			handleError(failed);
 		})
 	}
 	/***************************GOOGLE ENDS***************************/
-	/***************************TWITTER***************************/
-	function twitter() {
-		firebase.auth().signInWithPopup(twitterProvider).then(function (result) {
-			let user = result.user;
-			let name = user.displayName;
-			let photo = user.photoURL;
-			let newPhoto = photo.replace("_normal", "");
-			//check if email is null
-			if (user.email == null) {
-				email = 'email is not verified'
-			} else {
-				let email = user.email;
-			}
-			createUserInfo(name, email, newPhoto);
-		}).catch(function (error) {
-			let failed = error.message;
-			handleError(failed);
-		})
-	}
-	/***************************TWITTER ENDS***************************/
+
 	/***************************CREATE USER CARD***************************/
-	function createUserInfo(name, email, photo, newPhoto) {
+	function createUserInfo(user) {
 		//hide githubLogin
 		buttonWrapper.style.display = 'none';
 		online.style.display = 'none';
@@ -84,10 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		let logout = document.createElement('button');
 		let img = document.createElement('img');
 		//apply info to elements
-		img.src = photo;
-		img.alt = name;
-		h1.innerText = name;
-		p.innerText = email;
+		img.src = user.photo;
+		img.alt = user.name;
+		h1.innerText = user.name;
+		p.innerText = user.email;
 		logout.innerText = 'Log out';
 		//apply to card
 		card.appendChild(img);

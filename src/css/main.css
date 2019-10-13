@@ -1,12 +1,16 @@
 body {
 	font-family: Questrial;
 	height: 200px;
-  background: #2C2E3E;
-  background: linear-gradient(#2C2E3E, #3A718C);
+	background-image: linear-gradient( 178.1deg,  rgba(60,55,106,1) 8.5%, rgba(23,20,69,1) 82.4% );
+
 }
 #wrapper {
 	text-align: center;
-	margin-top: 280px;
+	margin-top:150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+ justify-content: center;
 }
 #online {
 	color: #F6F6F6;
@@ -26,7 +30,7 @@ body {
 	font-size: 2.3em;
 	font-weight: lighter;
 	letter-spacing: 2px;
-    cursor: pointer;
+ cursor: pointer;
 }
 #githubLogin a,
 #twitterLogin a,
@@ -73,9 +77,14 @@ p {
 	margin-bottom: 30px;
 	font-family: Questrial, sans-serif;
 }
+
+#title {
+	padding: 20px;
+	font-family: Mansalva;
+}
 #card button {
 	font-family: Questrial;
-	border: 2px solid #B2D430;
+	border: 2px solid hsl(246, 100%, 79%);;
 	outline: 0;
 	display: inline-block;
 	padding: 10px;
@@ -88,7 +97,7 @@ p {
 	border-radius: 5px;
 }
 #card button:active {
-	background-color: #B2D430;
+	background-color: hsl(246, 100%, 79%);;
 	transform: scale(1.1);
 }
 #card img {
@@ -105,15 +114,11 @@ p {
 #popup {
 	display: none;
 	background-color: transparent;
-	border: 1px solid #B2D430;
-	border-radius: 5px;
-	width: 300px;
-	height: 35px;
+	width: 310px;
 	padding: 10px;
 	margin: 0px auto;
 	font-weight: 100;
 	overflow: hidden;
-	;
 }
 #popup {
 	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
@@ -172,6 +177,6 @@ p {
 }
 @media screen and (max-width: 415px) {
 	#wrapper {
-		margin-top: 175px;
+		margin-top: 150px;
 	}
 }
